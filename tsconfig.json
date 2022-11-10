@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "target": "es6",
+    "lib": ["esnext", "dom"],
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "baseUrl": "./src/ts",
+    "outDir": "./public/wp-content/themes/custom-theme/js"
+  },
+  "exclude": [
+    "node_modules",
+    "cypress",
+    "public"
+  ]
+}

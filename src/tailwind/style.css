@@ -1,0 +1,10 @@
+/*
+    Theme Name: Custom Theme
+    Author: Nick Zou
+    Author URI: https://nickzou.com/
+    Version: 2.0.0
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

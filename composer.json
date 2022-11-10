@@ -1,0 +1,44 @@
+{
+    "name:": "nickzou/custom-wordpress-theme-boilerplate",
+    "type": "project",
+    "license": "MIT",
+    "description": "Useful WordPress plugins",
+    "homepage": "https://nickzou.com",
+    "authors": [
+        {
+            "name": "Nick Zou",
+            "email": "z.nick00@gmail.com",
+            "homepage": "https://github.com/nickzou"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        }
+    ],
+    "require": {
+        "wpackagist-plugin/timber-library": "^1.21.0"
+    },
+    "require-dev": {
+      "lucatume/wp-browser": "^3.0",
+      "codeception/module-asserts": "^1.0",
+      "codeception/module-phpbrowser": "^1.0",
+      "codeception/module-webdriver": "^1.0",
+      "codeception/module-db": "^1.0",
+      "codeception/module-filesystem": "^1.0",
+      "codeception/module-cli": "^1.0",
+      "codeception/util-universalframework": "^1.0"
+    },
+    "extra": {
+        "installer-paths": {
+            "public/wp-content/plugins/{$name}": [
+              "type:wordpress-plugin"
+            ]
+        }
+    }
+}
