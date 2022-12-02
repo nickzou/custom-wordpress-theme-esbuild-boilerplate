@@ -2,6 +2,8 @@ const esbuild = require('esbuild')
 const dotenv = require('dotenv')
 const { resolve } = require('path')
 const glob = require('glob')
+const browserslist = require('browserslist')
+const { esbuildPluginBrowserslist } = require('esbuild-plugin-browserslist')
 
 dotenv.config()
 
@@ -16,13 +18,18 @@ esbuild.build({
     bundle: true,
     minify: false,
     sourcemap: true,
+    plugins: [
+      esbuildPluginBrowserslist(browserslist('defaults'), {
+        printUnknownTargets: false,
+      }),
+    ],
     watch: {
-        onRebuild(error, result) {
-            if(error) console.error('watch build failed:', error)
-            else {
-                console.log('watch build succeeded:', result)
-            }
+      onRebuild(error, result) {
+        if(error) console.error('watch build failed:', error)
+        else {
+          console.log('watch build succeeded:', result)
         }
+      }
     }
 })
 .then(result => {
